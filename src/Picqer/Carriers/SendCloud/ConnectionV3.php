@@ -112,7 +112,7 @@ class ConnectionV3
                 $this->parseResponse($e->getResponse());
             }
 
-            throw new SendCloudApiException('SendCloud error: (no error message provided)' . $e->getResponse(), $e->getResponse()->getStatusCode());
+            throw new SendCloudApiException('SendCloud error: (no error message provided)' . $e->getResponse()->getBody()->getContents(), $e->getResponse()->getStatusCode());
         }
     }
 
