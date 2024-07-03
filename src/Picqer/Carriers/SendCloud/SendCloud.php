@@ -11,9 +11,17 @@ class SendCloud
      */
     protected $connection;
 
-    public function __construct(Connection $connection)
+    /**
+     * The HTTP connectionV3
+     *
+     * @var ConnectionV3
+     */
+    protected $connectionV3;
+
+    public function __construct(Connection $connection, ConnectionV3 $connectionV3)
     {
         $this->connection = $connection;
+        $this->connectionV3 = $connectionV3;
     }
 
     public function invoices(): Invoice
@@ -29,6 +37,11 @@ class SendCloud
     public function parcels(): Parcel
     {
         return new Parcel($this->connection);
+    }
+
+    public function orders(): Order
+    {
+        return new Order($this->connectionV3);
     }
 
     public function shippingMethods(): ShippingMethod

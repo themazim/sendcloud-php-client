@@ -5,7 +5,7 @@ namespace Picqer\Carriers\SendCloud;
 abstract class Model
 {
     /**
-     * @var Connection
+     * @var Connection|ConnectionV3
      */
     protected $connection;
 
@@ -37,7 +37,7 @@ abstract class Model
         'plural' => ''
     ];
 
-    public function __construct(Connection $connection, array $attributes = [])
+    public function __construct(Connection|ConnectionV3 $connection, array $attributes = [])
     {
         $this->connection = $connection;
         $this->fill($attributes);
