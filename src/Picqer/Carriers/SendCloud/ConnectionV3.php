@@ -105,10 +105,6 @@ class ConnectionV3
     public function post($url, $body, $query = []): array
     {
         try {
-
-            $body = json_decode($body);
-            $body = json_encode([$body]);
-
             $result = $this->client()->post($url, ['body' => $body, 'query' => $query]);
             return $this->parseResponse($result);
         } catch (RequestException $e) {
