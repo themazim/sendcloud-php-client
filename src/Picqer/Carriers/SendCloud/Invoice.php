@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\Json;
+
 /**
  * Class Invoice
  *
@@ -18,6 +20,7 @@ namespace Picqer\Carriers\SendCloud;
 class Invoice extends Model
 {
     use Query\FindAll;
+    use Json;
 
     protected $fillable = [
         'id',

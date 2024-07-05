@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\JsonBatch;
+
 /**
  * Class Parcel
  *
@@ -24,6 +26,7 @@ class Order extends Model
     use Query\Findable;
     use Persistance\Storable;
     use Persistance\Multiple;
+    use JsonBatch;
 
     protected $fillable = [
         'id',

@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\Json;
+
 /**
  * Class ShippingMethod
  *
@@ -16,6 +18,7 @@ namespace Picqer\Carriers\SendCloud;
 class ShippingMethod extends Model
 {
     use Query\Findable;
+    use Json;
 
     protected $fillable = [
         'id',

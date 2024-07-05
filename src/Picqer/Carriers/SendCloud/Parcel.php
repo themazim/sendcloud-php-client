@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\Json;
+
 /**
  * Class Parcel
  *
@@ -37,6 +39,7 @@ class Parcel extends Model
     use Query\Findable;
     use Persistance\Storable;
     use Persistance\Multiple;
+    use Json;
 
     protected $fillable = [
         'id',

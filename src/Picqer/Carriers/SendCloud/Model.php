@@ -134,15 +134,6 @@ abstract class Model
         return ! empty($this->attributes[$this->primaryKey]);
     }
 
-    public function json()
-    {
-        $json = [
-            $this->namespaces['singular'] => $this->attributes
-        ];
-
-        return json_encode($json);
-    }
-
     /**
      * Make var_dump and print_r look pretty
      *

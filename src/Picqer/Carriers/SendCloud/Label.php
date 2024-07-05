@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\Json;
+
 /**
  * Class Label
  *
@@ -13,6 +15,7 @@ namespace Picqer\Carriers\SendCloud;
 class Label extends Model
 {
     use Query\FindOne;
+    use Json;
 
     protected $fillable = [
         'normal_printer',

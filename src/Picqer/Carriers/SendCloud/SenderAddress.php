@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\Json;
+
 /**
  * Class SenderAddress
  *
@@ -22,6 +24,7 @@ namespace Picqer\Carriers\SendCloud;
 class SenderAddress extends Model
 {
     use Query\Findable;
+    use Json;
 
     protected $fillable = [
         'id',

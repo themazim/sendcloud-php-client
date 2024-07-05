@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\Json;
+
 /**
  * Class User
  *
@@ -23,6 +25,7 @@ namespace Picqer\Carriers\SendCloud;
 class User extends Model
 {
     use Query\FindOne;
+    use Json;
 
     protected $fillable = [
         'username',

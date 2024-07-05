@@ -2,6 +2,8 @@
 
 namespace Picqer\Carriers\SendCloud;
 
+use Picqer\Carriers\SendCloud\Model\Json;
+
 /**
  * @property integer $id
  * @property string $message
@@ -9,6 +11,7 @@ namespace Picqer\Carriers\SendCloud;
 class ParcelStatus extends Model
 {
     use Query\Findable;
+    use Json;
 
     protected $fillable = [
         'id',
