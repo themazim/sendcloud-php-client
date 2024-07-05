@@ -3,6 +3,7 @@
 namespace Picqer\Carriers\SendCloud;
 
 use Picqer\Carriers\SendCloud\Model\Json;
+use Picqer\Carriers\SendCloud\Model\JsonSingle;
 
 /**
  * Class Parcel
@@ -27,7 +28,7 @@ class Integration extends Model
     use Query\FindWithoutNamespace;
     use Persistance\Storable;
     use Persistance\Multiple;
-    use Json;
+    use JsonSingle;
 
     protected $fillable = [
         'id',
