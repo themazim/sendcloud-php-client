@@ -54,7 +54,7 @@ class ConnectionV3
             'handler' => $handlerStack
         ];
 
-        if (! is_null($this->partnerId)) {
+        if (!is_null($this->partnerId)) {
             $clientConfig['headers']['Sendcloud-Partner-Id'] = $this->partnerId;
         }
 
@@ -174,12 +174,19 @@ class ConnectionV3
             $responseBody = $response->getBody()->getContents();
             $resultArray = json_decode($responseBody, true);
 
-            if (! is_array($resultArray)) {
+            if (!is_array($resultArray)) {
                 throw new SendCloudApiException(sprintf(
                     'SendCloud error %s: %s',
                     $response->getStatusCode(),
                     $responseBody
                 ), $response->getStatusCode());
+            }
+
+            if (
+                array_key_exists('errors', $resultArray)
+                && is_array($resultArray['errors'])
+            ) {
+                throw new SendCloudApiException('SendCloud error v3: ' . $resultArray['errors'][0]['detail'] . ' : ' . print_r($resultArray, true), intval($resultArray['error'][0]['status']));
             }
 
             if (
