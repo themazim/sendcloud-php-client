@@ -186,7 +186,7 @@ class ConnectionV3
                 array_key_exists('errors', $resultArray)
                 && is_array($resultArray['errors'])
             ) {
-                throw new SendCloudApiException('SendCloud error v3: ' . $resultArray['errors'][0]['detail'] . ' : ' . print_r($resultArray, true), intval($resultArray['error'][0]['status']));
+                throw new SendCloudApiException('SendCloud error v3: ' . $resultArray['errors'][0]['detail'] . ' : ' . print_r($resultArray, true), intval($resultArray['errors'][0]['status']));
             }
 
             if (
