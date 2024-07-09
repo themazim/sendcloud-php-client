@@ -30,6 +30,10 @@ trait FindAll
             $resultsContainer = $result[$this->namespaces['plural']];
         }
 
+        if (isset($result['data']) && !isset($result[$this->namespaces['plural']])) {
+            $resultsContainer = $result['data'];
+        }
+
         foreach ($resultsContainer as $item) {
             $collection[] = new self($this->connection(), $item);
         }
