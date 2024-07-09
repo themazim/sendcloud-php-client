@@ -174,7 +174,7 @@ class ConnectionV3
             $responseBody = $response->getBody()->getContents();
             $resultArray = json_decode($responseBody, true);
 
-            if (!is_array($resultArray)) {
+            if (!is_array($resultArray) && $response->getStatusCode() !== 204) {
                 throw new SendCloudApiException(sprintf(
                     'SendCloud error %s: %s',
                     $response->getStatusCode(),
